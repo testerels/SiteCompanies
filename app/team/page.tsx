@@ -32,26 +32,29 @@ const Description = styled.p`
 const TeamGrid = styled.div`
   display: flex;
   flex-wrap: wrap;
-  gap: 2rem;
+  gap: 2.5rem;
   justify-content: center;
   margin-top: 2rem;
 `;
 
 const MemberCard = styled.div`
-  background: #23272f;
-  border-radius: 16px;
-  box-shadow: 0 4px 24px rgba(56,189,248,0.10);
-  padding: 2rem 2.5rem;
-  min-width: 220px;
-  max-width: 260px;
+  background: rgba(35, 39, 47, 0.98);
+  border-radius: 24px;
+  box-shadow: 0 8px 40px 0 rgba(56,189,248,0.10), 0 1.5px 12px 0 rgba(0,0,0,0.18);
+  padding: 2.5rem 2.5rem 2rem 2.5rem;
+  min-width: 300px;
+  max-width: 340px;
+  min-height: 370px;
   color: #f1f5f9;
   display: flex;
   flex-direction: column;
   align-items: center;
-  transition: transform 0.2s, box-shadow 0.2s;
+  justify-content: flex-start;
+  transition: transform 0.22s, box-shadow 0.22s;
+  margin-bottom: 2.5rem;
   &:hover {
-    transform: translateY(-6px) scale(1.03);
-    box-shadow: 0 8px 32px rgba(56,189,248,0.18);
+    transform: translateY(-8px) scale(1.035);
+    box-shadow: 0 16px 48px 0 rgba(56,189,248,0.18), 0 2px 16px 0 rgba(0,0,0,0.22);
   }
 `;
 
@@ -59,33 +62,48 @@ const Avatar = styled.div`
   width: 72px;
   height: 72px;
   border-radius: 50%;
-  background: linear-gradient(135deg, #38bdf8 40%, #6366f1 100%);
+  background: linear-gradient(135deg, #38bdf8 10%, #6366f1 90%);
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 2.2rem;
+  font-size: 2.5rem;
   color: #fff;
-  margin-bottom: 1rem;
-  font-weight: 700;
+  margin-bottom: 1.2rem;
+  box-shadow: 0 2px 12px 0 rgba(56,189,248,0.18);
 `;
 
 const Name = styled.h2`
-  font-size: 1.15rem;
+  font-size: 1.18rem;
   color: #38bdf8;
-  margin-bottom: 0.3rem;
+  margin-bottom: 0.2rem;
   font-weight: 700;
+  text-align: center;
+  min-height: 2.5em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 `;
 
 const Role = styled.p`
-  color: #a1a1aa;
-  font-size: 1rem;
+  color: #b3b3b3;
+  font-size: 1.02rem;
   margin-bottom: 0.7rem;
+  text-align: center;
+  min-height: 2em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 `;
 
 const Bio = styled.p`
-  color: #cbd5e1;
-  font-size: 0.98rem;
+  color: #ededed;
+  font-size: 1.01rem;
   text-align: center;
+  word-break: break-word;
+  flex: 1 1 auto;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
 `;
 
 export default function TeamPage() {
@@ -93,28 +111,33 @@ export default function TeamPage() {
         <Wrapper>
             <Title>Наша команда</Title>
             <Description>
-                Мы — Digital Night Team. Каждый из нас вносит свой вклад в общее дело, чтобы создавать лучшие продукты для вас!
+                Команда АО "АК Беркут" — это сплочённый коллектив инженеров, технологов и специалистов, объединённых страстью к авиации и инновациям.
             </Description>
             <TeamGrid>
                 <MemberCard>
-                    <Avatar>🧑‍💻</Avatar>
-                    <Name>Алексей Иванов</Name>
-                    <Role>Frontend Developer</Role>
-                    <Bio>Эксперт по React и Next.js, любит тёмные темы и современные UI-фреймворки.</Bio>
+                    <Avatar>⚙️</Avatar>
+                    <Name>Инженерный отдел</Name>
+                    <Role>Проектирование и разработка</Role>
+                    <Bio>
+                        Отвечает за создание и внедрение новых технических решений, проектирование и испытания летательных аппаратов.
+                    </Bio>
                 </MemberCard>
                 <MemberCard>
-                    <Avatar>👩‍🎨</Avatar>
-                    <Name>Мария Смирнова</Name>
-                    <Role>UI/UX Designer</Role>
-                    <Bio>Создаёт стильные интерфейсы и заботится о каждом пикселе и эмоции пользователя.</Bio>
+                    <Avatar>🔬</Avatar>
+                    <Name>Технологический отдел</Name>
+                    <Role>Производство и качество</Role>
+                    <Bio>
+                        Контролирует процессы сборки, тестирования и обеспечивает высокие стандарты качества продукции.
+                    </Bio>
                 </MemberCard>
                 <MemberCard>
-                    <Avatar>🧑‍🔧</Avatar>
-                    <Name>Игорь Кузнецов</Name>
-                    <Role>Backend Developer</Role>
-                    <Bio>Отвечает за надёжность, скорость и безопасность серверной части наших проектов.</Bio>
+                    <Avatar>🛡️</Avatar>
+                    <Name>Служба безопасности и поддержки</Name>
+                    <Role>Надёжность и сопровождение</Role>
+                    <Bio>
+                        Обеспечивает безопасность эксплуатации, техническую поддержку и обучение клиентов.
+                    </Bio>
                 </MemberCard>
-                {/* Добавь ещё участников по желанию */}
             </TeamGrid>
         </Wrapper>
     );

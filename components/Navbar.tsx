@@ -2,6 +2,7 @@
 
 import styled, { css } from 'styled-components';
 import Link from 'next/link';
+import Image from 'next/image';
 import * as DropdownMenu from '@radix-ui/react-dropdown-menu';
 import { useState, useEffect } from 'react';
 
@@ -12,13 +13,13 @@ const Nav = styled.nav<{ $scrolled: boolean }>`
   z-index: 50;
   transition: background 0.3s, box-shadow 0.3s, backdrop-filter 0.3s;
   background: ${({ $scrolled }) =>
-      $scrolled
-          ? 'rgba(24, 24, 27, 0.85)'
-          : 'rgba(24, 24, 27, 0.55)'};
+    $scrolled
+        ? 'rgb(24,24,26)'
+        : 'rgba(24, 24, 27, 0.55)'};
   box-shadow: ${({ $scrolled }) =>
-      $scrolled
-          ? '0 4px 24px rgba(0,0,0,0.25)'
-          : 'none'};
+    $scrolled
+        ? '0 4px 24px rgba(0,0,0,0.25)'
+        : 'none'};
   backdrop-filter: blur(12px);
 `;
 
@@ -32,12 +33,18 @@ const NavContainer = styled.div`
   height: 64px;
 `;
 
-const Logo = styled.span`
+const LogoContainer = styled.div`
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+`;
+
+const LogoText = styled.span`
   font-weight: 800;
   font-size: 1.5rem;
-  color: #38bdf8;
+  color: #eeeef0;
   letter-spacing: 1px;
-  text-shadow: 0 2px 8px rgba(56,189,248,0.08);
+  text-shadow: 0 2px 8px rgba(56, 189, 248, 0.08);
 `;
 
 const NavLinks = styled.div<{ open?: boolean }>`
@@ -46,15 +53,15 @@ const NavLinks = styled.div<{ open?: boolean }>`
   align-items: center;
 
   @media (max-width: 768px) {
-    display: ${({ open }) => (open ? 'flex' : 'none')};
+    display: ${({open}) => (open ? 'flex' : 'none')};
     position: absolute;
     top: 64px;
     left: 0;
     width: 100%;
     flex-direction: column;
-    background: rgba(24,24,27,0.95);
+    background: rgb(24, 24, 26);
     padding: 1.5rem 0 1rem 0;
-    box-shadow: 0 8px 32px rgba(56,189,248,0.10);
+    box-shadow: 0 8px 32px rgba(56, 189, 248, 0.10);
     z-index: 30;
     backdrop-filter: blur(12px);
   }
@@ -68,8 +75,9 @@ const navLinkStyle = css`
   padding: 0.4rem 0.8rem;
   border-radius: 6px;
   transition: background 0.2s, color 0.2s;
+
   &:hover, &:focus {
-    background: #0ea5e9;
+    background: #38bdf8;
     color: #fff;
     outline: none;
   }
@@ -163,7 +171,10 @@ export default function Navbar() {
   return (
       <Nav $scrolled={scrolled}>
         <NavContainer>
-          <Logo>NightTeam</Logo>
+          <LogoContainer>
+            <Image src="/logo.png" alt="Логотип" width={45} height={30} />
+            <LogoText>АО "АК" Беркут"</LogoText>
+          </LogoContainer>
           <Burger
               open={open}
               onClick={() => setOpen((v) => !v)}

@@ -76,20 +76,20 @@ export default function ContactsPage() {
             <ContactList>
                 <ContactItem>
                     📧 Email:&nbsp;
-                    <ContactLink href="mailto:info@digitalnight.team">
-                        info@digitalnight.team
+                    <ContactLink href="ditev.sergey@gmail.com">
+                        ditev.sergey@gmail.com
                     </ContactLink>
                 </ContactItem>
                 <ContactItem>
                     💬 Telegram:&nbsp;
-                    <ContactLink href="https://t.me/digitalnight_team" target="_blank" rel="noopener noreferrer">
-                        @digitalnight_team
+                    <ContactLink href="https://t.me/notesterone" target="_blank" rel="noopener noreferrer">
+                        @notesterone
                     </ContactLink>
                 </ContactItem>
                 <ContactItem>
                     🌐 Сайт:&nbsp;
-                    <ContactLink href="https://digitalnight.team" target="_blank" rel="noopener noreferrer">
-                        digitalnight.team
+                    <ContactLink href="https://site-companies.vercel.app/" target="_blank" rel="noopener noreferrer">
+                        companies.vercel.app
                     </ContactLink>
                 </ContactItem>
             </ContactList>

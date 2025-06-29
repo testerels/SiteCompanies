@@ -2,6 +2,7 @@
 
 import styled from 'styled-components';
 import Link from 'next/link';
+import Image from 'next/image';
 
 const FooterBar = styled.footer`
   width: 100%;
@@ -13,6 +14,13 @@ const FooterBar = styled.footer`
   align-items: center;
   margin-top: auto;
   box-shadow: 0 -2px 16px rgba(56,189,248,0.07);
+`;
+
+const LogoText = styled.span`
+  font-weight: 700;
+  font-size: 1.2rem;
+  color: #38bdf8;
+  letter-spacing: 1px;
 `;
 
 const FooterLinks = styled.div`
@@ -47,12 +55,12 @@ export default function Footer() {
                 <FooterLink href="/about">О компании</FooterLink>
                 <FooterLink href="/team">Команда</FooterLink>
                 <FooterLink href="/contacts">Контакты</FooterLink>
-                <FooterLink href="https://t.me/digitalnight_team" target="_blank" rel="noopener noreferrer">
+                <FooterLink href="https://t.me/notesterone" target="_blank" rel="noopener noreferrer">
                     Telegram
                 </FooterLink>
             </FooterLinks>
             <Copyright>
-                © {new Date().getFullYear()} Digital Night Team. Все права защищены.
+                © {new Date().getFullYear()} АО "АК" Беркут". Все права защищены.
             </Copyright>
         </FooterBar>
     );
