@@ -1,6 +1,5 @@
 'use client';
-
-import styled, { keyframes, css } from 'styled-components';
+import styled, { keyframes } from 'styled-components';
 import * as Dialog from '@radix-ui/react-dialog';
 
 const slideUp = keyframes`
