@@ -24,6 +24,11 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+/* Фикс Radix UI: убирает сдвиг страницы при открытии модалки */
+html body[data-scroll-locked] {
+  margin-right: 0 !important;
+}
+
 * {
   box-sizing: border-box;
   padding: 0;
