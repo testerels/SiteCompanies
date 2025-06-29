@@ -52,7 +52,7 @@ export default function Footer() {
                 </FooterLink>
             </FooterLinks>
             <Copyright>
-                © {new Date().getFullYear()} АО "АК" Беркут". Все права защищены.
+                © {new Date().getFullYear()} АО &quot;АК Беркут&quot;. Все права защищены.
             </Copyright>
         </FooterBar>
     );

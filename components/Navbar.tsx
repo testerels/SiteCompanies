@@ -173,7 +173,7 @@ export default function Navbar() {
         <NavContainer>
           <LogoContainer>
             <Image src="/logo.png" alt="Логотип" width={45} height={30} />
-            <LogoText>АО "АК" Беркут"</LogoText>
+            <LogoText>АО &quot;АК Беркут&quot;</LogoText>
           </LogoContainer>
           <Burger
               open={open}
