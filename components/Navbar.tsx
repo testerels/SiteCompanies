@@ -41,7 +41,7 @@ const LogoContainer = styled.div`
 
 const LogoText = styled.span`
   font-weight: 800;
-  font-size: 1.5rem;
+  font-size: 1.0rem;
   color: #eeeef0;
   letter-spacing: 1px;
   text-shadow: 0 2px 8px rgba(56, 189, 248, 0.08);

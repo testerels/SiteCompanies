@@ -17,7 +17,7 @@ const FooterBar = styled.footer`
 
 const FooterLinks = styled.div`
   display: flex;
-  gap: 2rem;
+  gap: 0.5rem;
   margin-bottom: 1rem;
   flex-wrap: wrap;
   justify-content: center;
