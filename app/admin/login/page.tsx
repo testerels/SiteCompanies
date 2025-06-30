@@ -1,17 +1,7 @@
 'use client';
-import styled, { keyframes } from 'styled-components';
+import styled, {  } from 'styled-components';
 import { useState } from 'react';
 import { useRouter } from 'next/navigation';
-
-const slideUp = keyframes`
-  from { transform: translateY(100%); opacity: 0.7; }
-  to { transform: translateY(0); opacity: 1; }
-`;
-
-const slideDown = keyframes`
-  from { transform: translateY(0); opacity: 1; }
-  to { transform: translateY(100%); opacity: 0.7; }
-`;
 
 const Wrapper = styled.main`
   min-height: 100vh;
