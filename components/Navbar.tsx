@@ -13,13 +13,13 @@ const Nav = styled.nav<{ $scrolled: boolean }>`
   z-index: 50;
   transition: background 0.3s, box-shadow 0.3s, backdrop-filter 0.3s;
   background: ${({ $scrolled }) =>
-    $scrolled
-        ? 'rgb(24,24,26)'
-        : 'rgba(24, 24, 27, 0.55)'};
+      $scrolled
+          ? 'rgb(24,24,26)'
+          : 'rgba(24, 24, 27, 0.55)'};
   box-shadow: ${({ $scrolled }) =>
-    $scrolled
-        ? '0 4px 24px rgba(0,0,0,0.25)'
-        : 'none'};
+      $scrolled
+          ? '0 4px 24px rgba(0,0,0,0.25)'
+          : 'none'};
   backdrop-filter: blur(12px);
 `;
 
@@ -155,6 +155,7 @@ const DropdownItem = styled(DropdownMenu.Item)`
 export default function Navbar() {
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const [isAdmin, setIsAdmin] = useState(false);
 
   // Эффект для изменения прозрачности при скролле
   useEffect(() => {
@@ -163,6 +164,16 @@ export default function Navbar() {
     };
     window.addEventListener('scroll', onScroll);
     return () => window.removeEventListener('scroll', onScroll);
+  }, []);
+
+  // Проверка наличия cookie admin=1 и обновление при смене вкладки
+  useEffect(() => {
+    const checkAdmin = () => {
+      setIsAdmin(document.cookie.includes('admin=1'));
+    };
+    checkAdmin();
+    window.addEventListener('focus', checkAdmin);
+    return () => window.removeEventListener('focus', checkAdmin);
   }, []);
 
   // Закрывать мобильное меню при переходе по ссылке
@@ -186,6 +197,7 @@ export default function Navbar() {
           </Burger>
           <NavLinks open={open}>
             <NavLink href="/" onClick={handleNavClick}>Главная</NavLink>
+            <NavLink href="/news" onClick={handleNavClick}>Новости</NavLink>
             <DropdownMenu.Root>
               <DropdownMenu.Trigger asChild>
                 <DropdownTrigger href="#" onClick={e => e.preventDefault()}>
@@ -204,6 +216,12 @@ export default function Navbar() {
               </DropdownMenu.Portal>
             </DropdownMenu.Root>
             <NavLink href="/contacts" onClick={handleNavClick}>Контакты</NavLink>
+            {/* Кнопка админки только для авторизованного админа */}
+            {isAdmin && (
+                <NavLink href="/admin" onClick={handleNavClick} style={{marginLeft: '1.5rem', fontWeight: 700, color: '#22c55e'}}>
+                  Админка
+                </NavLink>
+            )}
           </NavLinks>
         </NavContainer>
       </Nav>
